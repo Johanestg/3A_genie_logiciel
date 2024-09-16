@@ -10,10 +10,14 @@ set(CMAKE_CXX_STANDARD_REQUIRED TRUE)
 
 
 # export configuration to source code 
-configure_file(HelloProjConfig.h.in HelloProjConfig.h)
+configure_file(cmake/HelloProjConfig.h.in HelloProjConfig.h)
 
-#add the executable target named HelloWorld
-add_executable(HelloWorld hello.cpp) #exécutable qui s'appelle HelloWorld à partir du .cpp
+#add libraries 
+add_subdirectory(src/basic)
 
-#add binary tree to the list of paths to search includes
-target_include_directories(HelloWorld PUBLIC "${PROJECT_BINARY_DIR}")  #l'exécutable HelloWorld a besoin des include qui sont dans project_binary_dir'
+#add executable 
+option(HELLOWORLD_WITH_EXECUTABLES "Compile mains" ON)
+if(HELLOWORLD_WITH_EXECUTABLES)
+	message(STATUS "Configuring Hello World with executables")
+	add_subdirectory(mains)
+endif()
