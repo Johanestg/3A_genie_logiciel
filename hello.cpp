@@ -1,7 +1,17 @@
-#include <stdio.h>
+#include <iostream>
+#include<HelloProjConfig.h>
 
-int main() 
+void hello_world() {
+	std::cout << "Hello world !" << std::endl;
+}
+
+void print_version() {
+	std::cout << "project version is " << HelloProj_VERSION_MAJOR << "." << HelloProj_VERSION_MINOR << std::endl;
+}
+
+int main()
 {
-	printf("Hello World! A native c++ programm compiled on the command line. \n");
+	hello_world();
+	print_version();
 	return 0;
 }
