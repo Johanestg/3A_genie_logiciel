@@ -21,3 +21,11 @@ if(HELLOWORLD_WITH_EXECUTABLES)
 	message(STATUS "Configuring Hello World with executables")
 	add_subdirectory(mains)
 endif()
+
+#add tests 
+option(HELLOWORLD_WITH_TESTS "Compile tests" ON)
+if(HELLOWORLD_WITH_TESTS)
+	enable_testing()
+	message(STATUS "Configuring Hello World with tests")
+	add_subdirectory(tests)
+endif()
