@@ -10,3 +10,5 @@ target_include_directories(${target_name}
  "${PROJECT_SOURCE_DIR}/include"
  "${PROJECT_BINARY_DIR}"
 )
+export(TARGETS ${target_name} FILE
+	  ${PROJECT_BINARY_DIR}/${target_name}_target.cmake)
