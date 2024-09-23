@@ -28,6 +28,6 @@ jobs:
     uses: cycjimmy/semantic-release-action@v4
     with:
      semantic_version: 19.0.5
-     branch: [ "main" ]
+     branch: "main"
     env:
      GITHUB_TOKEN: ${{ secrets.TOKEN }}
