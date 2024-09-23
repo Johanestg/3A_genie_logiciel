@@ -1,4 +1,7 @@
-/build2
+/build
+/out
+/.vs
+
 # Prerequisites
 *.d
 
