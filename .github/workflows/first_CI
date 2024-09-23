@@ -1,18 +1,17 @@
 name: CI
 on:
 	push: 
-		branches: [ "main" ]
+		branches: [ "master" ]
 env:
 	BUILD_TYPE: Release
 jobs: 
 	build:
 		runs-on: ubuntu-latest
-
 		steps:
 		- uses: actions/checkout@v4
 		- name: Generate package
 		  run: |
-			mkdir -p buimd
+			mkdir -p build
 			cd buildversion="${GITHUB_REF##*/*/}"
 			echo::set-output name=version::$version
 			camke -DCMAKE_BUILD_TYPE=${{env.BUILD_TYPE}} ..
