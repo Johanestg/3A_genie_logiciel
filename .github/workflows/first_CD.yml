@@ -6,7 +6,7 @@ env:
  BUILD_TYPE: Release
 jobs:
  format:
-  uses: Geode-solutions/actions/.github/workflows/format.yml@master
+  uses: Geode-solutions/actions/.github/workflows/format.yml@main
   secrets:
    TOKEN: ${{ secrets.TOKEN }}
  build:
