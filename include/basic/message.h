@@ -1,5 +1,5 @@
 #pragma once 
-/*permet au fichier.hde n'être inclue qu'une seule fois*/
+/*permet au fichier.hde netre inclue quune seule fois*/
 
 void hello_world();
 void print_version();
