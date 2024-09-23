@@ -1,0 +1,20 @@
+name: CI
+on:
+	push: 
+		branches: [ "main" ]
+env:
+	BUILD_TYPE: Release
+jobs: 
+	build:
+		runs-on: ubuntu-latest
+
+		steps:
+		- uses: actions/checkout@v4
+		- name: Generate package
+		  run: |
+			mkdir -p buimd
+			cd buildversion="${GITHUB_REF##*/*/}"
+			echo::set-output name=version::$version
+			camke -DCMAKE_BUILD_TYPE=${{env.BUILD_TYPE}} ..
+			cmake --build . --config ${{env.BUILD_TYPE}}
+			ctest -C ${{env.BUILD_TYPE}}
